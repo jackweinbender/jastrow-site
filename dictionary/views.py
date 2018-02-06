@@ -1,37 +1,28 @@
 from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse,HttpResponseRedirect
+from django.views.generic import ListView,DetailView
 from dictionary.models import Letter,Page
 
-def index(request):
-    letters = Letter.objects.all()
-    page = Page.objects.get(pk=1)
+IMAGE_URL_PATH = "https://storage.googleapis.com/dictionary-nearline/images/page_"
 
-    page_url = "https://storage.googleapis.com/dictionary-nearline/images/"
-    page_url += "page_%02d/%02d_original.png" % (page.number,page.number)
+class IndexView(ListView):
+    model = Letter
+    template_name = 'base.html'
+    context_object_name = 'letters'
 
-    template = loader.get_template('base.html')
-    context = {
-        'letters': letters,
+class PageView(DetailView):
+    model = Page
+    template_name = 'page.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
         
-    }
-    
-    return HttpResponse(template.render(context, request))
-
-def page(request, page_num):
-    letters = Letter.objects.all()
-    page = Page.objects.get(number=page_num)
-
-    pages = Page.objects.filter(letter_id=page.letter_id)
-    
-    page_url = "https://storage.googleapis.com/dictionary-nearline/images/"
-    page_url += "page_%02d/%02d_original.png" % (page_num,page_num)
-
-    template = loader.get_template('page.html')
-    context = {
-        'letters': letters,
-        'pages': pages,
-        'page_url': page_url
-    }
-    
-    return HttpResponse(template.render(context, request))
+        page = kwargs['object']
+        file_name = "%02d/%02d_original.png" % (page.number,page.number)
+        
+        context['letters'] = Letter.objects.all()
+        context['pages'] = Page.objects.filter(letter_id=page.letter_id)
+        context['page_url'] = IMAGE_URL_PATH + file_name
+        
+        return context

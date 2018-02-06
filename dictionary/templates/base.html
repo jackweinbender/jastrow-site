@@ -22,7 +22,9 @@
         <div class="letters">
         <ul>
             {% for letter in letters %}
-            <li><a href="/page/{{letter.start_page}}">{{letter.char}}</a></li>
+            <li><a href="{% url 'page' letter.start_page %}"
+                class="nav-link{% if letter.id == current_page.letter_id.id %} active{% endif %}"
+                >{{letter.char}}</a></li>
             {% endfor %}
         </ul>
         </div>
@@ -32,7 +34,9 @@
             <div class="pages">
             <ul>
                 {% for page in pages %}
-                <li><a href="/page/{{page.number}}">{{page.headword}}</a></li>
+                <li><a href="{% url 'page' page.number %}"
+                    class="nav-link{% if page.id == current_page.id %} active{% endif %}"
+                    >{{page.headword}}</a></li>
                 {% endfor %}
             </ul>
             </div>

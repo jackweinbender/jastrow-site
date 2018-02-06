@@ -1,11 +1,28 @@
 * {
     box-sizing: border-box;
 }
-
+html {
+    font-size: 16px;
+}
 h1, h2 {
     color: #111;
     text-align: left;
     margin:0;
+}
+
+body {
+    margin:0;
+    padding:0;
+}
+
+
+ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
 }
 
 .header {
@@ -14,71 +31,52 @@ h1, h2 {
     border-bottom: solid 3px #111;
 }
 
-body {
-    font-size: 16px;
-    margin:0;
-    padding:0;
+.letters, .pages {
+    background-color: #eee;
 }
 
 .letters {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-family: 'SBL Hebrew', 'Times New Roman', sans-serif;
     float:left;
-}
-
-.letters ul {
-    margin: 0;
-    padding: 0;
-}
-
-.letters li {
-    margin:0;
-    padding:0;
-    list-style: none;
-}
-
-.letters a {
-    text-decoration: none;
-    color: black;
     width: 3rem;
-    padding: 0.25rem;
-    display: inline-block;
-    text-align: center;
-}
-
-.letters a:hover {
-    background-color: gray;
 }
 
 .pages {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-family: 'SBL Hebrew', 'Times New Roman', sans-serif;
     float:left;
     border-right: solid 1px black;
     border-left: solid 1px black;
 }
-
-.pages ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.nav-link {
+    color: black;
+    display: inline-block;
+    padding: 0.25rem;
+    text-decoration: none;
+    width:100%;
+    border-top:solid 1px #fff;
+    border-bottom:solid 1px #ccc;
 }
-.pages li {
+.nav-link:hover {
+    background-color: #aaa;
+    border-top:solid 1px #777;
+    border-bottom:solid 1px #777;
+    cursor: pointer;
+}
+.letters .nav-link {
+    text-align: center;
+}
+.pages .nav-link {
+    padding: 0.25rem 1rem;
     text-align: right;
 }
-.pages a {
-    text-decoration: none;
-    color: black;
-    padding: 0.25rem 0.75rem;
-    display: inline-block;
-    width:100%;
+.active {
+    background-color:#ccc;
+    border-top:solid 1px #999;
+    border-bottom:solid 1px #999;
 }
-
-.pages a:hover {
-    background-color: gray;
-}
-
 .page-image {
-    padding: 0 2rem;
-    float:left;
+    padding: 2rem 4rem;;
+    float:right;
 }

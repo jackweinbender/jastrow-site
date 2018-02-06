@@ -26,6 +26,7 @@ class PageView(BuildableDetailView):
         
         context['letters'] = Letter.objects.all()
         context['pages'] = Page.objects.filter(letter_id=page.letter_id)
+        context['current_page'] = page
         context['page_url'] = IMAGE_URL_PATH + file_name
         
         return context

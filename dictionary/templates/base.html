@@ -1,29 +1,37 @@
 <!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Jastrow</title>
-</head>
-<body>
-    <h1><a href="/">Jastrow Home</a></h1>
-{% block letters %}
-    <ul>
-    {% for letter in letters %}
-        <li><a href="/page/{{letter.start_page}}">{{letter.char}}</a></li>
-    {% endfor %}
-    </ul>
-{% endblock letters %}
-{% block pages %}
-    {% if pages %}
-    <ul>
-        {% for page in pages %}
-            <li><a href="/page/{{page.number}}">{{page.headword}}</a></li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-{% endblock pages %}
-{% block page %}
-    <img src="{{page_url}}" alt="Jastrow Page {{page.number}}">
-{% endblock page %}
-</body>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Jastrow | Dictionary of the Targumim</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" href="icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        {% block letters %}
+        <ul>
+            {% for letter in letters %}
+                <li><a href="/page/{{letter.start_page}}">{{letter.char}}</a></li>
+            {% endfor %}
+        </ul>
+        {% endblock letters %}
+        {% block pages %}
+            {% if pages %}
+            <ul>
+                {% for page in pages %}
+                    <li><a href="/page/{{page.number}}">{{page.headword}}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% endblock pages %}
+        {% block page %}
+            <img src="{{page_url}}" alt="Jastrow Page {{page.number}}">
+        {% endblock page %}
+    </body>
 </html>

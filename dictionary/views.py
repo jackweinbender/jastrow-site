@@ -1,7 +1,7 @@
 from bakery.views import BuildableListView,BuildableDetailView
 from dictionary.models import Letter,Page
 
-IMAGE_URL_PATH = "/static/dictionary/pages/"
+IMAGE_URL_PATH = "/static/pages/"
 
 class IndexView(BuildableListView):
     model = Letter

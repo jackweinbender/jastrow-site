@@ -7,6 +7,7 @@
         "char": "א",
         "translit": "ʔ",
         "name": "aleph",
+        "start_page": 1,
         "sort_order": 1
     }
   },
@@ -18,6 +19,7 @@
         "char": "ב‬",
         "translit": "b",
         "name": "bet",
+        "start_page": 134,
         "sort_order": 2
     }
   },
@@ -29,6 +31,7 @@
         "char": "ג‬",
         "translit": "g",
         "name": "gimmel",
+        "start_page": 201,
         "sort_order": 3
     }
   },
@@ -40,6 +43,7 @@
         "char": "ד",
         "translit": "d",
         "name": "dalet",
+        "start_page": 276,
         "sort_order": 4
     }
   },
@@ -50,7 +54,8 @@
         "language": "hebrew",
         "char": "ה‬",
         "translit": "h",
-        "name": "hey",
+        "name": "he",
+        "start_page": 327,
         "sort_order": 5
     }
   },
@@ -62,6 +67,7 @@
         "char": "ו‬",
         "translit": "w",
         "name": "waw",
+        "start_page": 371,
         "sort_order": 6
     }
   },
@@ -73,6 +79,7 @@
         "char": "ז‬",
         "translit": "z",
         "name": "zayin",
+        "start_page": 377,
         "sort_order": 7
     }
   },
@@ -84,6 +91,7 @@
         "char": "ח",
         "translit": "ḥ",
         "name": "ḥet",
+        "start_page": 415,
         "sort_order": 8
     }
   },
@@ -95,6 +103,7 @@
         "char": "ט",
         "translit": "ṭ",
         "name": "ṭet",
+        "start_page": 515,
         "sort_order": 9
     }
   },
@@ -106,6 +115,7 @@
         "char": "י‬",
         "translit": "y",
         "name": "yod",
+        "start_page": 559,
         "sort_order": 10
     }
   },
@@ -117,6 +127,7 @@
         "char": "כ‬",
         "translit": "k",
         "name": "kap",
+        "start_page": 605,
         "sort_order": 11
     }
   },
@@ -128,6 +139,7 @@
         "char": "ל",
         "translit": "l",
         "name": "lamed",
+        "start_page": 685,
         "sort_order": 12
     }
   },
@@ -136,9 +148,10 @@
     "pk": 13,
     "fields": {
         "language": "hebrew",
-        "char": "א",
-        "translit": "מ",
+        "char": "מ",
+        "translit": "m",
         "name": "mem",
+        "start_page": 721,
         "sort_order": 13
     }
   },
@@ -150,6 +163,7 @@
         "char": "נ‬",
         "translit": "n",
         "name": "nun",
+        "start_page": 865,
         "sort_order": 14
     }
   },
@@ -161,6 +175,7 @@
         "char": "ס‬",
         "translit": "s",
         "name": "samek",
+        "start_page": 947,
         "sort_order": 15
     }
   },
@@ -172,6 +187,7 @@
         "char": "ע‬",
         "translit": "ʕ",
         "name": "ayin",
+        "start_page": 1034,
         "sort_order": 16
     }
   },
@@ -183,6 +199,7 @@
         "char": "פ‬",
         "translit": "p",
         "name": "pe",
+        "start_page": 1130,
         "sort_order": 17
     }
   },
@@ -194,6 +211,7 @@
         "char": "צ‬",
         "translit": "ṣ",
         "name": "tsade",
+        "start_page": 1256,
         "sort_order": 18
     }
   },
@@ -205,6 +223,7 @@
         "char": "ק",
         "translit": "q",
         "name": "qop",
+        "start_page": 1306,
         "sort_order": 19
     }
   },
@@ -216,6 +235,7 @@
         "char": "ר‬",
         "translit": "r",
         "name": "resh",
+        "start_page": 1434,
         "sort_order": 20
     }
   },
@@ -227,6 +247,7 @@
         "char": "שׂ‬",
         "translit": "ṥ",
         "name": "shin",
+        "start_page": 1505,
         "sort_order": 22
     }
   },
@@ -238,6 +259,7 @@
         "char": "ת",
         "translit": "t",
         "name": "tav",
+        "start_page": 1641,
         "sort_order": 23
     }
   }

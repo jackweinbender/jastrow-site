@@ -31,7 +31,7 @@ lamed, mem, nun, samek, ayin , pe, tsade, qop, resh, shin, tav]
 fixture = []
 i = 1
 
-for letter in letters:
+for letter_index, letter in enumerate(letters):
     for word in letter:
         if i == 684:
             i += 1
@@ -41,7 +41,8 @@ for letter in letters:
                 "pk": i,
                 "fields": {
                     "number": i,
-                    "headword": word
+                    "headword": word,
+                    "letter_id": letter_index + 1
                 }
             }
         )

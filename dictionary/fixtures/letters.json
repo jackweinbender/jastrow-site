@@ -224,17 +224,6 @@
     "pk": 21,
     "fields": {
         "language": "hebrew",
-        "char": "שׁ‬",
-        "translit": "ś",
-        "name": "sin",
-        "sort_order": 21
-    }
-  },
-  {
-    "model": "dictionary.letter",
-    "pk": 22,
-    "fields": {
-        "language": "hebrew",
         "char": "שׂ‬",
         "translit": "ṥ",
         "name": "shin",
@@ -243,7 +232,7 @@
   },
   {
     "model": "dictionary.letter",
-    "pk": 23,
+    "pk": 22,
     "fields": {
         "language": "hebrew",
         "char": "ת",

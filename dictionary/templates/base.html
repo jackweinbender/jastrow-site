@@ -14,24 +14,34 @@
         <link rel="stylesheet" href="/static/dictionary/styles.css">
     </head>
     <body>
+        <div class="header">
+            <h1>Dictionary of Targumim</h1>
+            <h2>Talmud and Midrashic Literature</h2>
+        </div>
         {% block letters %}
+        <div class="letters">
         <ul>
             {% for letter in letters %}
-                <li><a href="/page/{{letter.start_page}}">{{letter.char}}</a></li>
+            <li><a href="/page/{{letter.start_page}}">{{letter.char}}</a></li>
             {% endfor %}
         </ul>
+        </div>
         {% endblock letters %}
         {% block pages %}
             {% if pages %}
+            <div class="pages">
             <ul>
                 {% for page in pages %}
-                    <li><a href="/page/{{page.number}}">{{page.headword}}</a></li>
+                <li><a href="/page/{{page.number}}">{{page.headword}}</a></li>
                 {% endfor %}
             </ul>
+            </div>
             {% endif %}
         {% endblock pages %}
         {% block page %}
+        <div class="page-image">
             <img src="{{page_url}}" alt="Jastrow Page {{page.number}}">
+        </div>
         {% endblock page %}
     </body>
 </html>

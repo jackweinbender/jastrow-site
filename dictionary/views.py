@@ -1,7 +1,7 @@
 from bakery.views import BuildableListView,BuildableDetailView
 from dictionary.models import Letter,Page
 
-IMAGE_URL_PATH = "/static/pages/"
+IMAGE_URL_PATH = "/static/dictionary/pages/"
 
 class IndexView(BuildableListView):
     model = Letter
@@ -10,7 +10,7 @@ class IndexView(BuildableListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['page_url'] = IMAGE_URL_PATH + "title.png"
+        context['page_url'] = IMAGE_URL_PATH + "000_title.png"
 
         return context
 

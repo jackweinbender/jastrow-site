@@ -6,6 +6,7 @@ class Letter(models.Model):
     char = models.CharField(max_length=256)
     translit = models.CharField(max_length=256)
     name = models.CharField(max_length=256)
+    start_page = models.IntegerField()
     sort_order = models.IntegerField()
     def __str__(self):
         return f"{self.language}: {self.char} - {self.name}"

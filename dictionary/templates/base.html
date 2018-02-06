@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Jastrow</title>
+</head>
+<body>
+    <h1><a href="/">Jastrow Home</a></h1>
+{% block letters %}
+    <ul>
+    {% for letter in letters %}
+        <li><a href="/page/{{letter.start_page}}">{{letter.char}}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock letters %}
+{% block pages %}
+    {% if pages %}
+    <ul>
+        {% for page in pages %}
+            <li><a href="/page/{{page.number}}">{{page.headword}}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endblock pages %}
+{% block page %}
+    <img src="https://storage.googleapis.com/dictionary-nearline/images/page_001/001_original.png" alt="">
+{% endblock page %}
+</body>
+</html>

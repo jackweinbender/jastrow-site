@@ -15,6 +15,10 @@ class Page(models.Model):
     number = models.IntegerField(unique=True)
     headword = models.CharField(max_length=256, blank=True)
     letter_id = models.ForeignKey(Letter, on_delete=models.CASCADE)
+    
+    def get_absolute_url(self):
+        return f"/page/{self.number}"
+    
     def __str__(self):
         return f"{self.number} - {self.headword}"
 

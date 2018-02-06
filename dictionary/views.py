@@ -1,17 +1,20 @@
-from django.shortcuts import render
-from django.template import loader
-from django.http import HttpResponse,HttpResponseRedirect
-from django.views.generic import ListView,DetailView
+from bakery.views import BuildableListView,BuildableDetailView
 from dictionary.models import Letter,Page
 
-IMAGE_URL_PATH = "https://storage.googleapis.com/dictionary-nearline/images/page_"
+IMAGE_URL_PATH = "https://storage.googleapis.com/dictionary-nearline/images/"
 
-class IndexView(ListView):
+class IndexView(BuildableListView):
     model = Letter
     template_name = 'base.html'
     context_object_name = 'letters'
 
-class PageView(DetailView):
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['page_url'] = IMAGE_URL_PATH + "title.png"
+
+        return context
+
+class PageView(BuildableDetailView):
     model = Page
     template_name = 'page.html'
 
@@ -19,7 +22,7 @@ class PageView(DetailView):
         context = super().get_context_data(**kwargs)
         
         page = kwargs['object']
-        file_name = "%02d/%02d_original.png" % (page.number,page.number)
+        file_name = "page_%03d/%03d_original.png" % (page.number,page.number)
         
         context['letters'] = Letter.objects.all()
         context['pages'] = Page.objects.filter(letter_id=page.letter_id)

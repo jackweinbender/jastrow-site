@@ -31,13 +31,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    # 'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'bakery',
+    'bakery',
     'dictionary',
 ]
 
@@ -122,4 +122,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Build directory for static site generation (Django Bakery)
-BUILD_DIR = '/build/'
+STATIC_ROOT = BASE_DIR + STATIC_URL
+BUILD_DIR = BASE_DIR + '/_build'
+
+BAKERY_VIEWS = (
+    'dictionary.views.IndexView',
+    'dictionary.views.PageView',
+)

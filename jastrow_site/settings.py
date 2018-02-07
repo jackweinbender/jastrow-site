@@ -124,7 +124,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR + 'static/'
 STATICFILES_DIRS = ( os.path.join('static'), )
 
-BUILD_DIR = BASE_DIR + '/docs'
+BUILD_DIR = BASE_DIR + '/build'
 
 BAKERY_VIEWS = (
     'dictionary.views.IndexView',

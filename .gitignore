@@ -1,5 +1,5 @@
 __pycache__
 .vscode
 *.sqlite3
-_build
+build
 .DS_Store

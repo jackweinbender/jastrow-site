@@ -14,38 +14,41 @@
         <link rel="stylesheet" href="/static/dictionary/styles.css">
     </head>
     <body>
-        <div class="header">
+        <header class="header">
             <h1>Dictionary of Targumim</h1>
             <h2>Talmud and Midrashic Literature</h2>
-        </div>
-        {% block letters %}
-        <div class="letters">
-        <ul>
-            {% for letter in letters %}
-            <li><a href="{% url 'page' letter.start_page %}"
-                class="nav-link{% if letter.id == current_page.letter_id.id %} active{% endif %}"
-                >{{letter.char}}</a></li>
-            {% endfor %}
-        </ul>
-        </div>
-        {% endblock letters %}
-        {% block pages %}
-            {% if pages %}
-            <div class="pages">
+            <h3>by Marcus Jastrow</h3>
+        </header>
+        <div class="content">
+            {% block letters %}
+            <div class="letters">
             <ul>
-                {% for page in pages %}
-                <li><a href="{% url 'page' page.number %}"
-                    class="nav-link{% if page.id == current_page.id %} active{% endif %}"
-                    >{{page.headword}}</a></li>
+                {% for letter in letters %}
+                <li><a href="{% url 'page' letter.start_page %}"
+                    class="nav-link{% if letter.id == current_page.letter_id.id %} active{% endif %}"
+                    >{{letter.char}}</a></li>
                 {% endfor %}
             </ul>
             </div>
-            {% endif %}
-        {% endblock pages %}
-        {% block page %}
-        <div class="page-image">
-            <img src="{{page_url}}" alt="Jastrow Page {{page.number}}">
+            {% endblock letters %}
+            {% block pages %}
+                {% if pages %}
+                <div class="pages">
+                <ul>
+                    {% for page in pages %}
+                    <li><a href="{% url 'page' page.number %}"
+                        class="nav-link{% if page.id == current_page.id %} active{% endif %}"
+                        >{{page.headword}}</a></li>
+                    {% endfor %}
+                </ul>
+                </div>
+                {% endif %}
+            {% endblock pages %}
+            {% block page %}
+            <div class="page">
+                <img src="{{page_url}}" alt="Jastrow Page {{page.number}}">
+            </div>
+            {% endblock page %}
         </div>
-        {% endblock page %}
     </body>
 </html>

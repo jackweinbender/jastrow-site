@@ -17,38 +17,31 @@
         <header class="header">
             <h1>Dictionary of Targumim</h1>
             <h2>Talmud and Midrashic Literature</h2>
-            <h3>by Marcus Jastrow</h3>
         </header>
-        <div class="content">
-            {% block letters %}
-            <div class="letters">
-            <ul>
-                {% for letter in letters %}
-                <li><a href="{% url 'page' letter.start_page %}"
-                    class="nav-link{% if letter.id == current_page.letter_id.id %} active{% endif %}"
-                    >{{letter.char}}</a></li>
-                {% endfor %}
-            </ul>
-            </div>
-            {% endblock letters %}
-            {% block pages %}
-                {% if pages %}
-                <div class="pages">
-                <ul>
-                    {% for page in pages %}
-                    <li><a href="{% url 'page' page.number %}"
-                        class="nav-link{% if page.id == current_page.id %} active{% endif %}"
-                        >{{page.headword}}</a></li>
+        <div class="wrapper">
+            <div class="nav">
+                {% block letters %}
+                <ul class="letters">
+                    {% for letter in letters %}
+                    <li class="letter{% if letter.id == current_page.letter_id.id %} active-letter{% endif %}"
+                        onclick=selectLetter(this)>{{letter.char}}
+                        <ul class="pages">
+                            {% for page in letter.page_set.all %}
+                            <li class="page{% if page.id == current_page.id %} active-page{% endif %}"><a href="{% url 'page' page.number %}">
+                                {{page.headword}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
                     {% endfor %}
                 </ul>
-                </div>
-                {% endif %}
-            {% endblock pages %}
+                {% endblock letters %}
+            </div>
             {% block page %}
-            <div class="page">
+            <div class="page-image">
                 <img src="{{page_url}}" alt="Jastrow Page {{page.number}}">
             </div>
             {% endblock page %}
         </div>
+        <script src="/static/dictionary/scripts.js"></script>
     </body>
 </html>

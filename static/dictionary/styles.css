@@ -2,6 +2,8 @@
 
 /* Layout */
 html, body {
+  max-width: 70rem;
+  position: relative;
   height:100%;
   margin:0;
 }
@@ -21,10 +23,12 @@ h3 {float:right; display:inline-block;}
   z-index: 999;
 }
 .wrapper, .nav, .letters, .pages, .page-image { height: 100%; }
-.wrapper{
+.wrapper {
+  position: relative;
   display: flex;
   overflow: hidden;
   padding-top:6rem;
+  background-color: blue;
 }
 .nav {
   flex: none;
@@ -41,7 +45,7 @@ h3 {float:right; display:inline-block;}
 }
 .pages{ display:none; }
 .active-letter > .pages { display:block; }
-.page-image img { 
+.page-img img { 
   width: 100%;
   min-width: 40rem;
 }
@@ -91,4 +95,37 @@ h2, h3 {font-style: italic;}
 .page a {display:block;}
 .page:hover   { background-color: rgb( 100, 150, 175 ) }
 .active-page { background-color: rgb( 150, 100, 175 ) }
-.page-image { padding: 1rem;}
+.page-view {
+  position:relative;
+  flex: auto;
+}
+.page-nav { 
+  width:100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(200, 200, 200);
+}
+  .page-nav a {
+    padding: 0.5rem 5rem;
+    color: black;
+    text-decoration: underline;
+    text-shadow: 1px 1px 1px white;
+  }
+  .next {
+    text-align: right;
+  }
+  .next:after {
+    content:' »'
+  }
+  .prev {
+    text-align: left;
+  }
+  .prev:before {content: '« '}
+
+.page-img {
+  padding:1rem;
+  padding-top:2rem;
+  height:100%;
+  overflow-y: scroll;
+}

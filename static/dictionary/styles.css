@@ -10,6 +10,11 @@ ul {
   margin:0;
   padding:0;
 }
+h1, h2, h3 {
+  margin:0;
+  padding:0;
+}
+h3 {float:right; display:inline-block;}
 .header {
   position: absolute;
   width: 100%;
@@ -19,7 +24,7 @@ ul {
 .wrapper{
   display: flex;
   overflow: hidden;
-  padding-top:8rem;
+  padding-top:6rem;
 }
 .nav {
   flex: none;
@@ -38,11 +43,17 @@ ul {
 .active-letter > .pages { display:block; }
 .page-image img { 
   width: 100%;
-  min-width: 50rem;
+  min-width: 40rem;
 }
 
 /* Typography */
-
+h1, h2, h3 {
+  font-family: 'Times New Roman', Serif;
+  font-weight: 100;
+  color: white;
+  padding-bottom: 0.5rem;
+}
+h2, h3 {font-style: italic;}
 .letters, .pages {
     font-family: 'SBL Hebrew', 'Times New Roman', Serif;
     font-size: 1.5rem;
@@ -54,10 +65,30 @@ ul {
 }
 
 /* Style */
+.header { 
+  padding: 0.5rem;
+  background-color: rgb(25, 50, 60);
+  border-bottom: solid 1px rgb(50, 50, 50);
+}
 .letters {
     text-align: center;
+    background-color: rgb(200, 200, 200);
 }
-
-.pages {
-    text-align: right;
+.letter {
+  border-bottom: solid 1px rgb(150, 150, 150);
+  padding: 0.25rem;
+  cursor: pointer;
 }
+.letter:hover { background-color: rgb(110, 175, 130) }
+.active-letter, .active-letter:hover { background-color: rgb(255, 170, 100) }
+.pages { 
+  background-color: rgb(245, 245, 245);
+  border-left:solid 1px rgb(125, 125, 125); 
+  border-right:solid 1px rgb(125, 125, 125); 
+  text-align: right;
+} 
+.page {padding:0.15rem 0.75rem;}
+.page a {display:block;}
+.page:hover   { background-color: rgb( 100, 150, 175 ) }
+.active-page { background-color: rgb( 150, 100, 175 ) }
+.page-image { padding: 1rem;}

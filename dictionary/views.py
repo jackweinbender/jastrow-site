@@ -27,6 +27,25 @@ class PageView(BuildableDetailView):
         context['letters'] = Letter.objects.all()
         context['pages'] = Page.objects.filter(letter_id=page.letter_id)
         context['current_page'] = page
+        context['next_page'] = get_next_page(page.id)
+        context['prev_page'] = get_prev_page(page.id)
         context['page_url'] = IMAGE_URL_PATH + file_name
         
         return context
+    
+def get_next_page(current_page):
+    if is_valid_page(current_page + 1):
+        return Page.objects.get(pk=current_page + 1)
+    else: return Page.objects.get(pk=current_page)
+
+def get_prev_page(current_page):
+    if is_valid_page(current_page - 1):
+        return Page.objects.get(pk=current_page - 1)
+    else: return Page.objects.get(pk=current_page)
+
+def is_valid_page(page_number):
+    if page_number < 1: return False
+    if page_number > 1705: return False
+    if page_number == 684: return False
+    
+    return True

@@ -39,8 +39,10 @@
             {% block page %}
             <div class="page-view">
                 <div class="page-nav">
-                    <a class="prev">Prev</a>
-                    <a class="next">Next</a>
+                    <a class="prev"
+                        href="{% url 'page' prev_page.number %}">Prev</a>
+                    <a class="next"
+                        href="{% url 'page' next_page.number %}">Next</a>
                 </div>
                 <div class="page-img">
                     <img src="{{page_url}}" alt="Jastrow Page {{page.number}}">

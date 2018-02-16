@@ -28,7 +28,6 @@ h3 {float:right; display:inline-block;}
   display: flex;
   overflow: hidden;
   padding-top:6rem;
-  background-color: blue;
 }
 .nav {
   flex: none;
@@ -67,13 +66,18 @@ h2, h3 {font-style: italic;}
     color:black;
     text-decoration: none;
 }
+.page-nav {
+  font-family: 'Ariel', sans-serif;
+}
 
 /* Style */
 .header { 
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;;
   background-color: rgb(25, 50, 60);
   border-bottom: solid 1px rgb(50, 50, 50);
+  border-right: solid 1px rgb(50, 50, 50);
 }
+.wrapper {border-right:solid 1px rgb(125, 125, 125);}
 .letters {
     text-align: center;
     background-color: rgb(200, 200, 200);
@@ -98,34 +102,34 @@ h2, h3 {font-style: italic;}
 .page-view {
   position:relative;
   flex: auto;
+  overflow: hidden;
 }
 .page-nav { 
   width:100%;
   position: absolute;
   display: flex;
-  justify-content: center;
   background-color: rgb(200, 200, 200);
+  border-bottom: solid 1px rgb(150, 150, 150);
+  box-shadow: -5px -0px 10px gray;
 }
   .page-nav a {
+    width: 50%;
     padding: 0.5rem 5rem;
     color: black;
-    text-decoration: underline;
-    text-shadow: 1px 1px 1px white;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px rgb(225, 225, 225);
   }
-  .next {
-    text-align: right;
+  .page-nav a:hover {
+    background-color: rgb(190, 190, 190);
   }
-  .next:after {
-    content:' »'
-  }
-  .prev {
-    text-align: left;
-  }
-  .prev:before {content: '« '}
-
+.disabled {
+  text-decoration: none !important;
+  color: gray !important;
+}
 .page-img {
   padding:1rem;
-  padding-top:2rem;
+  padding-top:3rem;
   height:100%;
   overflow-y: scroll;
 }

@@ -36,12 +36,12 @@ class PageView(BuildableDetailView):
 def get_next_page(current_page):
     if is_valid_page(current_page + 1):
         return Page.objects.get(pk=current_page + 1)
-    else: return Page.objects.get(pk=current_page)
+    else: return False
 
 def get_prev_page(current_page):
     if is_valid_page(current_page - 1):
         return Page.objects.get(pk=current_page - 1)
-    else: return Page.objects.get(pk=current_page)
+    else: return False
 
 def is_valid_page(page_number):
     if page_number < 1: return False

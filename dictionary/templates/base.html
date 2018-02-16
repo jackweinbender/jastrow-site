@@ -39,10 +39,20 @@
             {% block page %}
             <div class="page-view">
                 <div class="page-nav">
+                    {% if prev_page %}    
                     <a class="prev"
-                        href="{% url 'page' prev_page.number %}">Prev</a>
+                        href="{% url 'page' prev_page.number %}">«&nbsp;Prev</a>
+                    {% else %}
+                    <a class="prev disabled"
+                        href="#">«&nbsp;Prev</a>
+                    {% endif %}    
+                    {% if next_page %} 
                     <a class="next"
-                        href="{% url 'page' next_page.number %}">Next</a>
+                        href="{% url 'page' next_page.number %}">Next&nbsp;»</a>
+                    {% else %}
+                    <a class="next disabled"
+                        href="#">Next&nbsp;»</a>    
+                    {% endif %}
                 </div>
                 <div class="page-img">
                     <img src="{{page_url}}" alt="Jastrow Page {{page.number}}">

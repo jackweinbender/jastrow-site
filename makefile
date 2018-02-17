@@ -10,9 +10,10 @@ publish:
 	@ echo "Done."
 
 build:
-	python3 manage.py build --no-static
-	cp static/dictionary/styles.css build/static/dictionary.styles.css
-	cp static/dictionary/scripts.js build/static/dictionary.scripts.js
+	@ echo "Building  Site..."
+	@ python3 manage.py build --skip-static
+	@ cp static/dictionary/styles.css build/static/dictionary.styles.css
+	@ cp static/dictionary/scripts.js build/static/dictionary.scripts.js
 
 build-css:
 	@echo "Pushing CSS..."

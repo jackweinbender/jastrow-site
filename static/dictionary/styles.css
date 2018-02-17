@@ -110,7 +110,7 @@ h2, h3 {font-style: italic;}
   width:100%;
   position: absolute;
   display: flex;
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(245, 245, 245);
   border-bottom: solid 1px rgb(150, 150, 150);
   box-shadow: -5px -0px 10px gray;
 }
@@ -123,7 +123,7 @@ h2, h3 {font-style: italic;}
     text-shadow: 1px 1px 1px rgb(225, 225, 225);
   }
   .page-nav a:hover {
-    background-color: rgb(190, 190, 190);
+    text-decoration: underline;
   }
 .disabled {
   text-decoration: none !important;

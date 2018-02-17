@@ -3,6 +3,8 @@ default:
 publish:
 	@ echo "Checking HTML..."
 	@ gsutil -m rsync -rdx 'static/dictionary/pages/*|\..*|.*/\.[^/]*$|.*/\..*/.*$|_.*' build/  gs://jastrow.semitics-archive.org/
+	@ echo "Checking CSS and JS..."
+	@ gsutil -m rsync -rdx 'pages/*|\..*|.*/\.[^/]*$|.*/\..*/.*$|_.*' static/dictionary/  gs://jastrow.semitics-archive.org/static/dictionary/
 	@ echo "Checking Images..."
 	@ gsutil -m rsync -rdx '\..*|.*/\.[^/]*$|.*/\..*/.*$|_.*' static/dictionary/pages/  gs://jastrow.semitics-archive.org/static/dictionary/pages
 	@ echo "Done."

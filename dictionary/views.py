@@ -2,6 +2,7 @@ from bakery.views import BuildableListView,BuildableDetailView
 from dictionary.models import Letter,Page
 
 IMAGE_URL_PATH = "/static/dictionary/pages/"
+PAGES_BY_LETTER = Letter.objects.prefetch_related('page_set').all()
 
 class IndexView(BuildableListView):
     model = Letter
@@ -24,8 +25,7 @@ class PageView(BuildableDetailView):
         page = kwargs['object']
         file_name = "%03d_original.png" % (page.number,)
         
-        context['letters'] = Letter.objects.all()
-        context['pages'] = Page.objects.filter(letter_id=page.letter_id)
+        context['letters'] = PAGES_BY_LETTER
         context['current_page'] = page
         context['next_page'] = get_next_page(page.id)
         context['prev_page'] = get_prev_page(page.id)

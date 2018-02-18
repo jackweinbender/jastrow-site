@@ -12,8 +12,9 @@ publish:
 build:
 	@ echo "Building  Site..."
 	@ python3 manage.py build --skip-static
-	@ cp static/dictionary/styles.css build/static/dictionary/styles.css
-	@ cp static/dictionary/scripts.js build/static/dictionary/scripts.js
+	@ mkdir build/static/ && mkdir build/static/dictionary
+	@ cp static/dictionary/styles.css build/static/dictionary/
+	@ cp static/dictionary/scripts.js build/static/dictionary/
 
 build-css:
 	@echo "Pushing CSS..."
